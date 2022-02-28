@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
-const slugify = require('slugify')
+const bcrypt = require('bcrypt')
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
-    description: {
+    email: {
         type: String,
         required: true,
         unique: true,
@@ -15,9 +15,16 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
-    },
-})
+    }
+});
 
+UserSchema.pre('save', function (next) {
+    const user = this;
+    bcrypt.hash(user.password, 10, (error, hash) => {
+        user.password = hash;
+        next();
+    })
+})
 
 const User = mongoose.model('User', UserSchema);
 module.exports = User;
