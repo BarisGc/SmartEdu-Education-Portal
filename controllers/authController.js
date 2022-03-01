@@ -3,6 +3,9 @@ const bcrypt = require('bcrypt')
 
 exports.createUser = async (req, res) => {
     try {
+        if (req.body.role == 'Admin') {
+            req.body.role = null
+        }
         const user = await User.create(req.body);
 
         res.status(201).redirect('/login')

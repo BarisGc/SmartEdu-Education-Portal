@@ -5,4 +5,4 @@ module.exports = (req, res, next) => {
         if (err || !user) return res.redirect('/login');
         next();
     });
-};
+}; 
