@@ -44,7 +44,6 @@ exports.getAllCourses = async (req, res) => {
                 { category: filter.category }
             ]
         }).sort('-createdAt').populate('user');
-        console.log("test", courses)
         const categories = await Category.find();
 
         res.status(200).render('courses', {
