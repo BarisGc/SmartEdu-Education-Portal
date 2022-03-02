@@ -4,11 +4,13 @@ const Category = require('../models/Category')
 exports.createCourse = async (req, res) => {
     // kurs FRONTEND oluşturma hazır olmadığı için json cevaplıyoruz.
     try {
-        const course = await Course.create(req.body);
-        res.status(200).json({
-            status: 'success',
-            course,
+        const course = await Course.create({
+            name: req.body.name,
+            description: req.body.name,
+            category: req.body.category,
+            user: req.session.userID
         });
+        res.status(201).redirect('/courses');
     } catch (error) {
         res.status(400).json({
             status: 'fail',
@@ -27,7 +29,7 @@ exports.getAllCourses = async (req, res) => {
         if (categorySlug) {
             filter = { category: category._id }
         }
-        const courses = await Course.find(filter);
+        const courses = await Course.find(filter).sort('-createdAt')
         const categories = await Category.find();
 
         res.status(200).render('courses', {
