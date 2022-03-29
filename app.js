@@ -35,7 +35,7 @@ app.use(
         secret: 'my_keyboard_cat', // Buradaki texti değiştireceğiz.
         resave: false,
         saveUninitialized: true,
-        store: MongoStore.create({ mongoUrl: 'mongodb://localhost/smart-edu-db' }),
+        store: MongoStore.create({ mongoUrl: 'mongodb+srv://dbUser:87mpSIgHw9zJBvc2@cluster0.e2jta.mongodb.net/SmartEdu-DB?retryWrites=true&w=majority' }),
     })
 );
 app.use(flash());
@@ -59,7 +59,7 @@ app.use('/courses', courseRoute);
 app.use('/categories', categoryRoute);
 app.use('/users', userRoute);
 
-const port = 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log(`App started on port ${port}`)
 });
