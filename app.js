@@ -35,7 +35,7 @@ app.use(
         secret: 'my_keyboard_cat', // Buradaki texti değiştireceğiz.
         resave: false,
         saveUninitialized: true,
-        store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1/smart-edu-db' }),
+        store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1:27017/smart-edu-db' }),
     })
 );
 app.use(flash());
