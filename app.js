@@ -12,7 +12,8 @@ const userRoute = require('./routes/userRoute')
 const app = express();
 
 //Connect DB
-mongoose.connect('mongodb+srv://BarisGc:ZYBUcKXhK4evIoTI@cluster0.ggu5r.mongodb.net/smartEduDB?retryWrites=true&w=majority', {
+
+mongoose.connect('mongodb+srv://BarisGc:ZYBUcKXhK4evIoTI@cluster0.e2jta.mongodb.net/smartEduDB?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
