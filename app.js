@@ -15,6 +15,7 @@ const app = express();
 mongoose.connect('mongodb+srv://barisd:6mjbNmMTkGf2yj0Y@cluster0.e2jta.mongodb.net/smartedu-db?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true
 }).then(() => {
     console.log('DB Connected Successfully')
 }).catch(err => {
