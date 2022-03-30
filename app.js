@@ -17,7 +17,9 @@ mongoose.connect('mongodb+srv://barisd:6mjbNmMTkGf2yj0Y@cluster0.e2jta.mongodb.n
     useUnifiedTopology: true,
 }).then(() => {
     console.log('DB Connected Successfully')
-})
+}).catch(err => {
+    console.error("App starting error", err.stack);
+});
 
 // Template Engine
 app.set("view engine", "ejs");
