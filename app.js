@@ -12,7 +12,7 @@ const userRoute = require('./routes/userRoute')
 const app = express();
 
 //Connect DB
-mongoose.connect('mongodb+srv://barisd:6mjbNmMTkGf2yj0Y@cluster0.e2jta.mongodb.net/smartedu-db?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://BarisGc:ZYBUcKXhK4evIoTI@cluster0.ggu5r.mongodb.net/smartEduDB?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
@@ -38,7 +38,7 @@ app.use(
         secret: 'my_keyboard_cat', // Buradaki texti değiştireceğiz.
         resave: false,
         saveUninitialized: true,
-        store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1:27017/smart-edu-db' }),
+        store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1:27017/smartEduDB' }),
     })
 );
 app.use(flash());
