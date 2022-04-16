@@ -1,6 +1,6 @@
-# Project Name: *SmartEdu*
+# Project Name: *SmartEdu Education Portal*
 ### Project Deployment:
-Please, click > [Netlify](https://notes-app-barisd.netlify.app/)
+Please, click > [Heroku](https://smartedu-barisd.herokuapp.com/)
 ### Project Main Goal: 
 - Building a backend weighted project with Node.js & Express.Js & Ejs Template Engine & MongoDb, experiencing how to handle backend using MVC architecture
 ### Project Sub-Goals:
@@ -16,7 +16,7 @@ Please, click > [Netlify](https://notes-app-barisd.netlify.app/)
 - Relations Between Models
 - To Practice Postman
 - To Practice Slugify
-- To Experience Backend Weighted Deployment Process Using HEROKU
+- To Experience Backend Weighted Deployment Process Using Heroku
 - To Experience Cloud Based Database Management
 ### Frameworks/Libraries:
 - Node.js, Express.js, Ejs Template Engine, Mongoose, Bcrypt, Nodemailer, Slugify
